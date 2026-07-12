@@ -1,3 +1,7 @@
+output "synapse_sql_pool_workload_classifiers_id" {
+  description = "Map of id values across all synapse_sql_pool_workload_classifiers, keyed the same as var.synapse_sql_pool_workload_classifiers"
+  value       = { for k, v in azurerm_synapse_sql_pool_workload_classifier.synapse_sql_pool_workload_classifiers : k => v.id }
+}
 output "synapse_sql_pool_workload_classifiers_context" {
   description = "Map of context values across all synapse_sql_pool_workload_classifiers, keyed the same as var.synapse_sql_pool_workload_classifiers"
   value       = { for k, v in azurerm_synapse_sql_pool_workload_classifier.synapse_sql_pool_workload_classifiers : k => v.context }
